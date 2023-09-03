@@ -1,0 +1,28 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#text-banner-section {
+  background: $color-police-blue;
+  color: $color-white;
+  position: relative;
+  padding-top: 125px;
+  padding-bottom: 125px;
+  overflow: hidden;
+
+  .copy {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    line-height: 1.15;
+  }
+  .number {
+    font-weight: 900;
+    @include fluid-type(80px, 147px);
+  }
+
+  .text {
+    @include fluid-type(24px, 32px);
+  }
+}
