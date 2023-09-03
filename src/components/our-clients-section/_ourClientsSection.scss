@@ -1,0 +1,46 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#our-clients-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  .our-clients-title {
+    font-weight: 900;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+    .copy-1 {
+      color: $color-medium-turquoise;
+      @include fluid-type(64px, 80px);
+      line-height: 1.2;
+    }
+
+    .copy-2 {
+      @include fluid-type(80px, 125px);
+      color: $color-mellow-apricot;
+      line-height: 1.2;
+    }
+
+    .copy-3 {
+      @include fluid-type(24px, 40px);
+      color: $color-mellow-apricot;
+      font-weight: 400;
+    }
+  }
+
+  .logos-wrapper {
+    margin-top: 11.57vh;
+  }
+
+  .logos-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4.75vw;
+    row-gap: 20px;
+    .client-asset {
+      width: 100%;
+    }
+  }
+}

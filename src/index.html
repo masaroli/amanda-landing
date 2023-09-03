@@ -8,11 +8,18 @@
     <!--Header-->
     {{> header/_header }}
     <!--Main-Content-->
-    <main>{{> hero/_hero}}</main>
+    <main>
+      {{> hero/_hero}} 
+      {{> video-section/_videoSection}} 
+      {{> our-clients-section/_ourClientsSection }}
+      {{> white-info-section/_whiteInfoSection }}
+      {{> route-section/_routeSection }}
+      {{> capacidades-section/_capacidadesSection }}
+    </main>
     <!--Footer-->
     {{> footer/_footer }}
     <!--Modal-->
-    {{> modal-sample/_modalSample}}
+    {{> video-modal/_videoModal}}
     <script type="module" src="/ts/main.ts"></script>
   </body>
 </html>

@@ -10,26 +10,34 @@ $color-canvas-inverted: #333 !default;
 
 // Brand Color Variables
 // --------------------------------------------------
-$color-brand-primary: #453f78 !default;
-$color-brand-secondary: #3f2e56 !default;
-$color-brand-tertiary: #401f3e !default;
+$color-police-blue: #225363 !default;
+$color-medium-turquoise: #3ccec3 !default;
+$color-terra-cotta: #e36b5f !default;
+$color-mellow-apricot: #f6bf6e !default;
+$color-davys-gray: #545454 !default;
 
-// Text Color Variables
-// --------------------------------------------------
-$color-text-primary: #333 !default;
-$color-text-secondary: #ccc !default;
-$color-text-tertiary: #ff6b00 !default;
-$color-text-inverted: #fff !default;
-$color-text-link: #ff6b00 !default;
-$color-text-success: #00b533 !default;
-$color-text-warn: #ffb700 !default;
-$color-text-danger: #ff2600 !default;
+$color-white-section: rgba(247, 245, 240, 1);
+$color-white: #fff;
+$color-black: #000;
+$color-success: #00b533 !default;
+$color-danger: #ff2600 !default;
 
-// UI Color Variables
-// --------------------------------------------------
-$color-ui-primary: #ff6b00 !default;
-$color-ui-secondary: #ffc635 !default;
-$color-ui-tertiary: #ffc635 !default;
-$color-ui-success: #00b533 !default;
-$color-ui-warn: #ffb700 !default;
-$color-ui-danger: #ff2600 !default;
+$gradient-black: linear-gradient(
+  to bottom,
+  hsla(0, 0%, 0%, 0) 0%,
+  hsla(0, 0%, 0%, 0.006) 8.1%,
+  hsla(0, 0%, 0%, 0.024) 15.5%,
+  hsla(0, 0%, 0%, 0.052) 22.5%,
+  hsla(0, 0%, 0%, 0.088) 29%,
+  hsla(0, 0%, 0%, 0.13) 35.3%,
+  hsla(0, 0%, 0%, 0.176) 41.2%,
+  hsla(0, 0%, 0%, 0.225) 47.1%,
+  hsla(0, 0%, 0%, 0.275) 52.9%,
+  hsla(0, 0%, 0%, 0.324) 58.8%,
+  hsla(0, 0%, 0%, 0.37) 64.7%,
+  hsla(0, 0%, 0%, 0.412) 71%,
+  hsla(0, 0%, 0%, 0.448) 77.5%,
+  hsla(0, 0%, 0%, 0.476) 84.5%,
+  hsla(0, 0%, 0%, 0.494) 91.9%,
+  hsla(0, 0%, 0%, 0.5) 100%
+);

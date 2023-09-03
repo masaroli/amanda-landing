@@ -1,0 +1,31 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#capacidades-section {
+  background: $color-white-section;
+  position: relative;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  overflow: hidden;
+  .capacidades-title {
+    font-weight: 900;
+    @include fluid-type(56px, 78px);
+    line-height: 1.05;
+  }
+
+  .capacidades-list {
+    @include fluid-type(16px, 24px);
+    width: 30.2vw;
+  }
+
+  .image-wrapper {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45.2vw;
+  }
+  .capacidades-img {
+    width: 100%;
+  }
+}

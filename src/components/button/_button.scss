@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@use '@styles/utils/mixins/media-query' as *;
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+.main-button {
+  font-size: 20px;
+  font-weight: 700;
+  background: $color-police-blue;
+  color: $color-white;
+  border-radius: 999px;
+  padding: 15px 25px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    border: 1px solid $color-police-blue;
+    background: $color-white;
+    clip-path: inset(0 100% 0 100%);
+  }
+
+  span {
+    position: relative;
+    color: $color-white;
+    display: inline-block;
+    transform: translateY(-0.2ch);
+  }
+
+  // HOVER
+  &:hover {
+    span {
+      position: relative;
+      color: $color-police-blue;
+      transition: color 300ms ease 150ms;
+    }
+
+    &:before {
+      clip-path: inset(0 0 0 0);
+      transition: clip-path 450ms ease;
+    }
+  }
+
+  &.inverted {
+    background: white;
+
+    span {
+      color: $color-police-blue;
+    }
+
+    &:hover {
+      span {
+        color: $color-white;
+      }
+
+      &:before {
+        background: $color-police-blue;
+        border: 1px solid $color-white;
+      }
+    }
+  }
+
+  &.video-section-button {
+    margin: 0 auto;
+    @include fluid-type(20px, 32px);
+  }
+}

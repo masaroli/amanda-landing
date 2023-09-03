@@ -1,0 +1,71 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#white-info-section {
+  background: $color-white-section;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  color: $color-police-blue;
+  text-align: center;
+
+  .white-info-title {
+    text-align: center;
+    line-height: 1.05;
+    @include fluid-type(42px, 64px);
+    margin-bottom: 75px;
+  }
+
+  .pills-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+  }
+
+  .pill-item {
+    text-align: center;
+    &.minus {
+      color: $color-medium-turquoise;
+    }
+    .pill-copy {
+      @include fluid-type(22px, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .nps-title {
+    margin-top: 75px;
+    @include fluid-type(56px, 78px);
+    font-weight: 900;
+
+    span {
+      padding: 5px 15px;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .nps-copy {
+    @include fluid-type(20px, 32px);
+    margin: 35px auto 75px auto;
+    width: 80%;
+    line-height: 1.05;
+  }
+
+  .steps-wrapper {
+    .steps-title {
+      @include fluid-type(52px, 77px);
+      margin-bottom: 100px;
+      span {
+        font-weight: 900;
+      }
+    }
+
+    .steps-asset {
+      width: 110%;
+      transform: translateX(-5%);
+    }
+  }
+}

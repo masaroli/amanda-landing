@@ -3,8 +3,11 @@
 $font-family-primary: -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Helvetica Neue', arial, sans-serif,
   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
 
+$useRem: true;
+$maximumFluidTypeViewportWidth: 1920px;
+$minimumFluidTypeViewportWidth: 375px;
 $font-size-primary: 16px !default;
 $font-size-heading1: 4.6rem;
 
-$height-header-desktop: 80px;
-$height-header-mobile: 60px;
+$height-header-desktop: 145px;
+$height-header-mobile: 80px;

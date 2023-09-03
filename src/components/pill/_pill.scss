@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@use '@styles/utils/mixins/media-query' as *;
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+.pill {
+  font-size: 20px;
+  font-weight: 700;
+  color: currentCcolor;
+  border-radius: 999px;
+  padding: 15px 20px;
+  position: relative;
+  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  background: currentColor;
+
+  .copy {
+    @include fluid-type(24px, 36px);
+    font-weight: 900;
+    color: $color-white;
+  }
+
+  .icon {
+    width: 4.4vw;
+    aspect-ratio: 1/1;
+  }
+}
