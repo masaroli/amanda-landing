@@ -20,4 +20,16 @@
   @include media-query(md) {
     height: $height-header-desktop;
   }
+
+  .block-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
 }
