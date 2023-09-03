@@ -3,19 +3,37 @@
 
 #capacidades-section {
   background: $color-white-section;
+  color: $color-police-blue;
   position: relative;
   padding-top: 75px;
   padding-bottom: 75px;
   overflow: hidden;
+
   .capacidades-title {
     font-weight: 900;
     @include fluid-type(56px, 78px);
     line-height: 1.05;
+    margin-bottom: 56px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: '';
+      background: rgba(227, 107, 95, 1);
+      border-radius: 999px;
+      width: 0.75ch;
+      height: 0.75ch;
+      top: 16%;
+      left: -7%;
+      box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 1);
+    }
   }
 
   .capacidades-list {
     @include fluid-type(16px, 24px);
     width: 30.2vw;
+    list-style-type: disc;
+    margin-left: 20px;
   }
 
   .image-wrapper {
@@ -23,7 +41,7 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 45.2vw;
+    width: min(860px, 45.2vw);
   }
   .capacidades-img {
     width: 100%;
