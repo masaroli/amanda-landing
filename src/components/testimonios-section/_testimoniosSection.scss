@@ -1,0 +1,79 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#testimonios-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  color: $color-white;
+
+  .block-wrapper {
+    position: relative;
+  }
+
+  .content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .our-clients-title {
+    font-weight: 900;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+    .copy-1 {
+      color: $color-medium-turquoise;
+      @include fluid-type(64px, 80px);
+      line-height: 1.2;
+    }
+
+    .copy-2 {
+      @include fluid-type(80px, 125px);
+      color: $color-mellow-apricot;
+      line-height: 1.2;
+    }
+
+    .copy-3 {
+      @include fluid-type(24px, 40px);
+      color: $color-mellow-apricot;
+      font-weight: 400;
+    }
+  }
+
+  .logos-wrapper {
+    margin-top: 11.57vh;
+  }
+
+  .logos-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4.75vw;
+    row-gap: 20px;
+    .client-asset {
+      width: 100%;
+    }
+  }
+
+  #testimonios-arrow-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    left: 0;
+    width: 100%;
+    color: $color-medium-turquoise;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+    & .arrow--disabled {
+      color: rgba($color-medium-turquoise, 0.5);
+    }
+  }
+
+  .arrow {
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,32 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+.testimonio-card {
+  border-radius: 30px;
+  background: $color-white;
+  padding: 40px 20px;
+  color: $color-police-blue;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  .footer {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    margin-top: 25px;
+  }
+
+  .company-logo {
+    width: min(252px, 50%);
+    margin-bottom: 20px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+  }
+}

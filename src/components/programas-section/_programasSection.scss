@@ -1,0 +1,27 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#programas-section {
+  padding-top: 33px;
+  padding-bottom: 75px;
+  background: $color-white-section;
+  color: $color-police-blue;
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    align-items: center;
+  }
+
+  .asset {
+    transform: translateX(-25%);
+  }
+  .programas-list {
+    @include fluid-type(16px, 24px);
+    flex-grow: 50;
+    width: 30.2vw;
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+}

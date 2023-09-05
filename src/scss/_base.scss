@@ -1,5 +1,6 @@
 @charset "UTF-8";
-@use './variables/' as *;
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
 
 /* ========================================
   Base
@@ -115,6 +116,9 @@ em {
 strong {
   font-weight: 900;
 }
+img {
+  width: 100%;
+}
 .block-wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -122,4 +126,25 @@ strong {
   max-width: 1210px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.generic-title {
+  font-weight: 900;
+  @include fluid-type(56px, 78px);
+  line-height: 1.05;
+  margin-bottom: 56px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: rgba(227, 107, 95, 1);
+    border-radius: 999px;
+    width: 0.75ch;
+    height: 0.75ch;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -7%;
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 1);
+  }
 }

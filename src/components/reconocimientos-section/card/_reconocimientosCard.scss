@@ -1,0 +1,30 @@
+@use '@styles/variables/' as *;
+
+.reconocimientos-card {
+  background: $color-white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 55px 10px;
+  position: relative;
+
+  .reconocimiento-logo {
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .title {
+    margin-top: 20px;
+    font-weight: 900;
+  }
+
+  .winner-tag {
+    position: absolute;
+    top: -13px;
+    right: -7px;
+    width: 45%;
+  }
+}

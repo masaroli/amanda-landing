@@ -1,0 +1,19 @@
+@use '@styles/variables/' as *;
+@use '@styles/utils/mixins/fluid-type' as *;
+
+#reconocimientos-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background: $color-white-section;
+  color: $color-police-blue;
+
+  .block-wrapper {
+    position: relative;
+  }
+
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+  }
+}
