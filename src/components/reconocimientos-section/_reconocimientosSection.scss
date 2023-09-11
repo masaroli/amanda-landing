@@ -1,19 +1,64 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #reconocimientos-section {
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-bottom: 0;
+  padding-top: 40px;
   background: $color-white-section;
   color: $color-police-blue;
 
+  @include media-query(lg) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
   .block-wrapper {
     position: relative;
   }
 
   .cards-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     column-gap: 25px;
+    row-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    @include media-query(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .banner {
+    margin-top: 45px;
+    background: $color-medium-turquoise;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    @include fluid-type(18px, 28px);
+    font-weight: 700;
+
+    .copy-wrapper {
+      display: block;
+      place-items: center;
+
+      figcaption {
+        width: 80%;
+        margin: 0 auto;
+        padding: 40px 0;
+      }
+    }
+
+    @include media-query(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .copy-wrapper {
+        display: grid;
+        figcaption {
+          width: 30vw;
+          padding: 0;
+        }
+      }
+    }
   }
 }

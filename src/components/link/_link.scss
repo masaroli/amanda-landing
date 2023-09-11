@@ -1,0 +1,33 @@
+@use '@styles/variables' as *;
+
+.link {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
+  .link-text-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    color: $color-police-blue;
+    clip-path: inset(0 100% 0 100%);
+    transition: clip-path 0ms ease;
+
+    &::after {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      content: '';
+      background: $color-white;
+    }
+  }
+
+  &:hover {
+    .link-text-mask {
+      clip-path: inset(0 0 0 0);
+      transition: clip-path 450ms ease;
+    }
+  }
+}

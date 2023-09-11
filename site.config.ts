@@ -4,7 +4,7 @@ const siteData = {
   locale: 'es',
   siteName: 'Amanda',
   shortName: 'Amanda',
-  description: 'un asistente digital de salud que simplifica la ruta del paciente.',
+  description: 'Un asistente digital de salud que simplifica la ruta del paciente.',
   url: 'https://amanda-care.com',
   ogpImage: 'ogp.jpg',
   ogType: 'website',
@@ -20,8 +20,8 @@ const siteData = {
 const pagesData = {
   '/index.html': {
     locale: siteData.locale,
-    title: `Development template | ${siteData.siteName}`,
-    description: `You can start coding ${siteData.description}`,
+    title: `${siteData.siteName}`,
+    description: `${siteData.description}`,
     url: `${siteData.url}`,
     ogpImage: siteData.ogpImage,
     ogType: siteData.ogType,

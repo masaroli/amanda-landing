@@ -14,12 +14,26 @@
   display: grid;
   place-items: center;
   color: $color-police-blue;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  .block-wrapper {
+    z-index: 1;
+  }
 
   .hero-background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 200%;
+    height: auto;
+    /* object-fit: cover; */
+    transform: translateX(-10%);
+    z-index: 0;
     grid-area: 1/1;
+
+    @include media-query(lg) {
+      width: 100%;
+      height: 100%;
+      transform: translateX(0);
+      object-fit: cover;
+    }
   }
 
   .hero-content {
@@ -31,18 +45,27 @@
     font-family: 'Muli';
     line-height: 1.26;
     font-weight: 700;
-    width: 49.5vw;
+    width: 90%;
   }
 
   .hero-subtitle {
     font-weight: 400;
     margin-bottom: 6.94vh;
     @include fluid-type(18px, 30px);
+    width: 80%;
   }
 
   @include media-query(md) {
     background: $color-black;
     padding-top: $height-header-desktop;
     aspect-ratio: 1920/935;
+
+    .hero-title {
+      width: 49.5vw;
+    }
+
+    .hero-subtitle {
+      width: 100%;
+    }
   }
 }

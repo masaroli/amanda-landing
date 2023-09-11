@@ -19,9 +19,13 @@
       {{> programas-section/_programasSection }}
       {{> testimonios-section/_testimoniosSection }}
       {{> reconocimientos-section/_reconocimientosSection }}
+      {{> demo-form-section/_demoFormSection }}
     </main>
     <!--Footer-->
     {{> footer/_footer }}
+    <div class="button-demo-wrapper demo-global hide" data-element="demo-button-element">
+      {{> button/_button copy="Solicitar una demo" link="#contactanos" className="inverted"}}
+    </div>
     <!--Modal-->
     {{> video-modal/_videoModal}}
     <script type="module" src="/ts/main.ts"></script>

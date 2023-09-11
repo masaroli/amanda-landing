@@ -1,0 +1,37 @@
+<section id="contactanos">
+  <div class="block-wrapper">
+    <div class="title-wrapper">
+      <h2 class="programas-title generic-title">Solicita una demo</h2>
+    </div>
+    <div class="content">
+      <form data-element="demo-form" action="send_email.php" class="form" method="post">
+        <label for="name">
+          <span>Nombre y apellido:</span>
+          <input type="text" name="name" id="name" required />
+        </label>
+        <label for="email">
+          <span>Email:</span>
+          <input type="email" name="email" id="email" required />
+        </label>
+        <label for="phone">
+          <span>Telefono:</span>
+          <input type="tel" name="phone" id="phone" required />
+        </label>
+
+        <label for="company">
+          <span>Empresa:</span>
+          <input type="text" name="company" id="company" required />
+        </label>
+
+        <label for="position">
+          <span>Cargo:</span>
+          <input type="text" name="position" id="position" required />
+        </label>
+        <div class="submit-wrapper">
+          <input type="submit" class="submit" value="Enviar" />
+        </div>
+        <p id="response-message" class="response-message"></p>
+      </form>
+    </div>
+  </div>
+</section>

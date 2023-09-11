@@ -5,6 +5,8 @@
 .modal {
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
     segoe ui, arial, sans-serif;
+  position: relative;
+  z-index: 9;
 }
 
 .modal__overlay {
@@ -13,6 +15,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 0 20px;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
@@ -21,8 +24,8 @@
 
 .modal__container {
   background-color: #fff;
-  padding: 30px;
-  max-width: 500px;
+  width: 100%;
+  max-width: 960px;
   max-height: 100vh;
   border-radius: 4px;
   overflow-y: auto;
@@ -30,9 +33,10 @@
 }
 
 .modal__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
 }
 
 .modal__title {
@@ -52,13 +56,16 @@
 
 .modal__header .modal__close:before {
   content: '\2715';
+  color: white;
 }
 
 .modal__content {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+  line-height: 0;
   color: rgba(0, 0, 0, 0.8);
+
+  .video {
+    width: 100%;
+  }
 }
 
 .modal__btn {

@@ -1,29 +1,52 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #capacidades-section {
   background: $color-white-section;
   color: $color-police-blue;
   position: relative;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 40px;
+  padding-bottom: 0;
   overflow: hidden;
 
   .capacidades-list {
     @include fluid-type(16px, 24px);
-    width: 30.2vw;
+    width: 80%;
     list-style-type: disc;
     margin-left: 20px;
   }
 
   .image-wrapper {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: min(860px, 45.2vw);
-  }
-  .capacidades-img {
     width: 100%;
+    aspect-ratio: 2/1;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .capacidades-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include media-query(lg) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+
+    .capacidades-list {
+      width: 30.2vw;
+    }
+
+    .image-wrapper {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45.2vw;
+      margin-top: 0;
+      height: 100%;
+    }
   }
 }

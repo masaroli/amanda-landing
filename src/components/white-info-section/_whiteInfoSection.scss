@@ -1,24 +1,30 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
-#white-info-section {
+#pacientes {
   background: $color-white-section;
   padding-top: 75px;
   padding-bottom: 75px;
   color: $color-police-blue;
   text-align: center;
+  overflow: hidden;
 
   .white-info-title {
+    @include fluid-type(42px, 64px);
     text-align: center;
     line-height: 1.05;
-    @include fluid-type(42px, 64px);
     margin-bottom: 75px;
   }
 
   .pills-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     align-items: end;
+    row-gap: 20px;
+
+    @include media-query(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .pill-item {
@@ -26,6 +32,7 @@
     &.minus {
       color: $color-medium-turquoise;
     }
+
     .pill-copy {
       @include fluid-type(22px, 32px);
       line-height: 1.2;
@@ -35,31 +42,42 @@
   }
 
   .nps-title {
-    margin-top: 75px;
     @include fluid-type(56px, 78px);
+    margin-top: 75px;
     font-weight: 900;
 
-    span {
-      padding: 5px 15px;
-      border: 2px solid currentColor;
-      border-radius: 999px;
-      border-bottom-right-radius: 0;
+    @include media-query(lg) {
+      span {
+        padding: 5px 15px;
+        border: 2px solid currentColor;
+        border-radius: 999px;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 
   .nps-copy {
     @include fluid-type(20px, 32px);
-    margin: 35px auto 75px auto;
+    margin: 20px auto 40px auto;
     width: 80%;
     line-height: 1.05;
+
+    @include media-query(lg) {
+      margin: 35px auto 75px auto;
+    }
   }
 
   .steps-wrapper {
     .steps-title {
       @include fluid-type(52px, 77px);
-      margin-bottom: 100px;
+      margin-bottom: 40px;
+
       span {
         font-weight: 900;
+      }
+
+      @include media-query(lg) {
+        margin-bottom: 100px;
       }
     }
 

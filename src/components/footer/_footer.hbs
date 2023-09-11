@@ -1,49 +1,34 @@
-<footer data-component='footer'>
-  <div class='block-wrapper'>
-    <div class='logo-wrapper'>
-      <a href='#'>
-        <svg class='amanda-logo'>
-          <use href='#icon-amanda-logo' />
+<footer data-component="footer">
+  <div class="block-wrapper">
+    <div class="logo-wrapper">
+      <a href="#">
+        <svg class="amanda-logo">
+          <use href="#icon-amanda-logo" />
         </svg>
       </a>
     </div>
-    <div class='wrapper-footer-center'>
+    <div class="wrapper-footer-center">
       <h4>HACENOS TU CONSULTA</h4>
-      <ul class='info-list'>
-        <li class='info-list-item'>
-          <a href='#' class='link'>
-            <span class='link-text'>Sobre nosotros</span>
-            <span class='link-text-mask'>Sobre nosotros</span>
-          </a>
+      <ul class="info-list">
+        <li class="info-list-item">
+          {{> link/_link link="#" copy="Sobre Amanda"}}
         </li>
-        <li class='info-list-item'>
-          <a href='#' class='link'>
-            <span class='link-text'>Contacto</span>
-            <span class='link-text-mask'>Contacto</span>
-          </a>
+        <li class="info-list-item">
+          {{> link/_link link="#contacto" copy="Contacto"}}
         </li>
-        <li class='info-list-item'>
-          <a href='#' class='link'>
-            <span class='link-text'>Clientes</span>
-            <span class='link-text-mask'>Clientes</span>
-          </a>
+        <li class="info-list-item">
+          {{> link/_link link="#clientes" copy="Clientes"}}
         </li>
-        <li class='info-list-item'>
-          <a href='#' class='link'>
-            <span class='link-text'>Términos y condiciones</span>
-            <span class='link-text-mask'>Términos y condiciones</span>
-          </a>
+        <li class="info-list-item">
+          {{> link/_link link="#" copy="Términos y condiciones"}}
         </li>
       </ul>
-      <p class='copyright'>©2023 Amanda Care. Todos los derechos reservados.</p>
     </div>
-    <div class='wrapper-footer-right'>
+    <div class="wrapper-footer-right">
       <h4>CONTACTANOS</h4>
-      <a href='mailto:sales@amanda-care.com' class='link'>
-        <span class='link-text'>sales@amanda-care.com</span>
-        <span class='link-text-mask'>sales@amanda-care.com</span>
-      </a>
-      <p class='direction'>16192 Coastal Highway | Lewes | Delaware, 19958 </p>
+      {{> link/_link link="mailto:sales@amanda-care.com" copy="sales@amanda-care.com"}}
+      <p class="direction">16192 Coastal Highway | Lewes | Delaware, 19958</p>
     </div>
+    <p class="copyright">©2023 Amanda Care. Todos los derechos reservados.</p>
   </div>
 </footer>

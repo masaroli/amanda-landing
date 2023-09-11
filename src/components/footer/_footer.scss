@@ -5,9 +5,13 @@
   background: $color-police-blue;
   position: relative;
   color: $color-white;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   box-shadow: 1px -3px 15px 0px rgba(0, 0, 0, 0.5);
+
+  @include media-query(lg) {
+    padding-top: 75px;
+  }
 
   .amanda-logo {
     width: 210px;
@@ -20,54 +24,34 @@
   }
 
   .block-wrapper {
-    display: grid;
+    display: block;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     position: relative;
+
+    @include media-query(lg) {
+      display: grid;
+    }
   }
 
   .info-list {
     margin-bottom: 30px;
   }
+
   .copyright {
-    position: absolute;
     font-weight: 700;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 40px;
+    text-align: center;
+
+    @include media-query(lg) {
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      transform: translateX(-50%);
+    }
   }
+
   .wrapper-footer-right {
     align-self: start;
-  }
-
-  .link {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-
-    .link-text-mask {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      color: $color-police-blue;
-      clip-path: inset(0 100% 0 100%);
-      transition: clip-path 0ms ease;
-
-      &::after {
-        z-index: -1;
-        position: absolute;
-        inset: 0;
-        content: '';
-        background: $color-white;
-      }
-    }
-
-    &:hover {
-      .link-text-mask {
-        clip-path: inset(0 0 0 0);
-        transition: clip-path 450ms ease;
-      }
-    }
   }
 }

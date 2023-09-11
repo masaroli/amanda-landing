@@ -1,5 +1,6 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #testimonios-section {
   padding-top: 75px;
@@ -30,6 +31,7 @@
 
     .copy-2 {
       @include fluid-type(80px, 125px);
+
       color: $color-mellow-apricot;
       line-height: 1.2;
     }
@@ -43,16 +45,6 @@
 
   .logos-wrapper {
     margin-top: 11.57vh;
-  }
-
-  .logos-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 4.75vw;
-    row-gap: 20px;
-    .client-asset {
-      width: 100%;
-    }
   }
 
   #testimonios-arrow-wrapper {

@@ -1,9 +1,11 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #our-clients-section {
-  padding-top: 75px;
-  padding-bottom: 75px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
   .our-clients-title {
     font-weight: 900;
 
@@ -13,12 +15,12 @@
     }
     .copy-1 {
       color: $color-medium-turquoise;
-      @include fluid-type(64px, 80px);
+      @include fluid-type(34px, 80px);
       line-height: 1.2;
     }
 
     .copy-2 {
-      @include fluid-type(80px, 125px);
+      @include fluid-type(60px, 125px);
       color: $color-mellow-apricot;
       line-height: 1.2;
     }
@@ -31,16 +33,24 @@
   }
 
   .logos-wrapper {
-    margin-top: 11.57vh;
+    margin-top: 40px;
   }
 
   .logos-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 4.75vw;
     row-gap: 20px;
     .client-asset {
       width: 100%;
+    }
+  }
+
+  @include media-query(lg) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    .logos-list {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

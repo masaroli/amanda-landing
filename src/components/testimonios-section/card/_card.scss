@@ -1,22 +1,24 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 .testimonio-card {
   border-radius: 30px;
   background: $color-white;
   padding: 40px 20px;
   color: $color-police-blue;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
 
   .footer {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
     column-gap: 16px;
-    margin-top: 25px;
+    padding-top: 12px;
+    margin-top: auto;
+    margin-bottom: 0;
   }
 
   .company-logo {
@@ -28,5 +30,18 @@
     width: 100px;
     aspect-ratio: 1/1;
     border-radius: 999px;
+  }
+
+  @include media-query(lg) {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    .footer {
+      justify-content: center;
+
+      padding-top: 0;
+      margin-top: 25px;
+      width: 80%;
+    }
   }
 }

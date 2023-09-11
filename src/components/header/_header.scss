@@ -3,7 +3,7 @@
 @use '@styles/variables' as *;
 
 /* ========================================
-  Hero Section
+  Header Section
 ======================================== */
 #page-header {
   height: $height-header-mobile;
@@ -16,35 +16,156 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 6;
+  position: fixed;
+  transition: transform 300ms ease;
+  transform: translateY(0);
 
+  &.hide {
+    transform: translateY(-100%);
+  }
   @include media-query(md) {
     height: $height-header-desktop;
   }
 
   .block-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
-  .logo-wrapper {
-    width: 285px;
-    padding: 10px;
-    gap: 10px;
-  }
-
   .amanda-logo {
-    width: 223px;
+    display: block;
+    width: 150px;
+    height: $height-header-mobile;
+
+    @include media-query(md) {
+      width: 223px;
+
+      height: $height-header-desktop;
+      margin-right: 100px;
+    }
   }
 
   .nav-bar {
     display: flex;
-    align-items: center;
     column-gap: 30px;
     margin-right: auto;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include media-query(lg) {
+      align-items: center;
+      padding-bottom: 0;
+      flex-direction: row;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
-  .logo-wrapper {
-    margin-right: 20px;
+  .menu-wrapper {
+    position: fixed;
+    width: 100%;
+    top: $height-header-mobile;
+    left: 0;
+    background: $color-police-blue;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+    padding-bottom: 20px;
+    transform: translateX(-100%);
+    transition: transform 100ms ease;
+
+    @include media-query(lg) {
+      top: unset;
+      position: relative;
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 0;
+      transform: translateX(0);
+    }
+  }
+
+  input:checked + .menu-wrapper {
+    transform: translateY(0);
+    transition: transform 400ms ease;
+  }
+  .social-link {
+    width: 37px;
+    height: 37px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+    @include media-query(lg) {
+      margin: initial;
+      margin-left: 0;
+      margin-top: 0;
+    }
+  }
+
+  // Menu Icon
+  .menu {
+    --s: 30px; /* control the size */
+    --c: #fff; /* the color */
+    z-index: 5;
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s) / 2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
+    background: var(--_g2) left var(--_p, 0px) top, var(--_g1) left calc(var(--s) / 10 + var(--_p, 0px)) top,
+      var(--_g2) right var(--_p, 0px) top, var(--_g1) right calc(var(--s) / 10 + var(--_p, 0px)) top;
+    background-size: 20% 80%, 40% 100%;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+    cursor: pointer;
+    transition: background-position 0.3s var(--_s, 0.3s), clip-path 0s var(--_s, 0.6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: var(--s);
+      inset: 40% 0;
+      background: var(--c);
+      transition: transform 0.3s calc(0.3s - var(--_s, 0.3s));
+    }
+
+    &:checked {
+      clip-path: inset(0);
+      --_p: calc(-1 * var(--s));
+      --_s: 0s;
+    }
+    &:checked:before {
+      transform: rotate(45deg);
+    }
+    &:checked:after {
+      transform: rotate(-45deg);
+    }
+    &:focus-visible {
+      clip-path: none;
+      -webkit-mask: none;
+      border: none;
+      outline: 2px solid var(--c);
+      outline-offset: 5px;
+    }
+
+    @include media-query(lg) {
+      display: none;
+    }
   }
 }

@@ -1,16 +1,19 @@
-<header id="page-header">
+<header id="page-header" data-element="navigation">
   <div class="block-wrapper">
-    <div class="logo-wrapper">
-      <a href="#">
-        <svg class="amanda-logo">
-          <use href="#icon-amanda-logo" /></svg
-      ></a>
+    <a href="#">
+      <svg class="amanda-logo">
+        <use href="#icon-amanda-logo" /></svg
+    ></a>
+    <input type="checkbox" role="button" aria-label="Display the menu" class="menu" />
+    <div class="menu-wrapper">
+      <nav class="nav-bar">
+        {{> link/_link link="#nosotros" copy="Sobre nosotros"}}
+        {{> link/_link link="#contactanos" copy="Contáctanos"}}
+        {{> link/_link link="#pacientes" copy="Pacientes"}}
+      </nav>
+      <a href="https://www.linkedin.com/company/amanda-care/" class="social-link"
+        ><img src="/assets/images/icon_social-linkedin.png" alt="linkedin" width="37px" height="37px"
+      /></a>
     </div>
-    <nav class="nav-bar">
-      <a href="">Sobre nosotros</a>
-      <a href="">Contáctanos</a>
-      <a href="">Pacientes</a>
-    </nav>
-    <a href=""><img src="/assets/images/icon_social-linkedin.png" alt="linkedin" width="37px" height="37px" /></a>
   </div>
 </header>

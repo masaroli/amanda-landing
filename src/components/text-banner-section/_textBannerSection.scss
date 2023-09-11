@@ -1,22 +1,26 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #text-banner-section {
   background: $color-police-blue;
   color: $color-white;
   position: relative;
-  padding-top: 125px;
-  padding-bottom: 125px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   overflow: hidden;
 
   .copy {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     column-gap: 30px;
     align-items: center;
+    text-align: center;
     line-height: 1.15;
   }
+
   .number {
     font-weight: 900;
     @include fluid-type(80px, 147px);
@@ -24,5 +28,17 @@
 
   .text {
     @include fluid-type(24px, 32px);
+  }
+
+  @include media-query(lg) {
+    padding-top: 125px;
+    padding-bottom: 125px;
+
+    .copy {
+      width: 80%;
+      text-align: left;
+
+      flex-direction: row;
+    }
   }
 }

@@ -24,7 +24,13 @@
   }
 
   .icon {
-    width: 4.4vw;
+    width: 40px;
     aspect-ratio: 1/1;
+  }
+
+  @include media-query(lg) {
+    .icon {
+      width: 4.4vw;
+    }
   }
 }

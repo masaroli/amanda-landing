@@ -1,5 +1,6 @@
 @use '@styles/variables/' as *;
 @use '@styles/utils/mixins/fluid-type' as *;
+@use '@styles/utils/mixins/media-query' as *;
 
 #programas-section {
   padding-top: 33px;
@@ -8,20 +9,32 @@
   color: $color-police-blue;
 
   .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 50px;
-    align-items: center;
+    @include media-query(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 50px;
+      align-items: center;
+    }
   }
 
   .asset {
-    transform: translateX(-25%);
+    width: 80%;
+    margin: 0 auto 20px;
+    display: block;
+    @include media-query(lg) {
+      margin: unset;
+      width: 100%;
+      transform: translateX(-25%);
+    }
   }
   .programas-list {
     @include fluid-type(16px, 24px);
     flex-grow: 50;
-    width: 30.2vw;
     list-style-type: disc;
     margin-left: 20px;
+
+    @include media-query(lg) {
+      width: 30.2vw;
+    }
   }
 }
